@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.github.solechko.tvguide" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>TVguide</name>
+    <description>
+        Мобильное приложение телепрограммы TVguide App.
+    </description>
+    <author email="yana.b617@yandex.ru" href="http://github.com/solechko">
+        Yana Bernikova
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

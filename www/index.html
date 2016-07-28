@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ТВ программа</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>	
+	<link rel="shortcut icon" href="favicon.ico"></link> 
+	<link rel="icon" href="favicon.ico"></link>
+	<script type="text/javascript" language="Javascript" src="js/jquery-2.2.3.min.js"></script>	
+	<script src="js/moment_min.js" ></script>	
+	<script src="js/xmltvparser.js" ></script>
+	<script src="js/script.js" ></script>	
+</head>
+<body class="b-page">
+	<header class="b-page__header">
+		<div class="b-page__slider b-slider">
+			<ul class="b-slider__list">	
+			</ul>
+		</div>		
+	</header>		
+	<div class="b-page__main">
+		<div class="b-page__navigation-buttons" >
+			<div class="b-page__nav-btn"> 
+				<div class="b-link b-link_selected b-link_icon">&#xf0ca;</div>
+				<h3 class="b-page__nav-header">Понедельник</h3>
+			</div>
+			<div class="b-page__sub-nav-btn"> 
+				<div class="b-link b-link_icon b-link_shape-ellipse">&#xf069;</div>
+			</div>
+		</div>
+		<nav class="b-page__navigation">
+			<div class="b-page__nav b-page__nav_curent-true">
+				<div class="b-page__switch-nav">&#xf103;</div>
+		 		<div class="b-day-menu">
+					<ul class="b-link-menu">	
+						<li class="b-link-menu__item">
+					 		<a class="b-link b-link_icon b-link_ok icon-caret-right" title="Сейчас" href="#" data-index="7">&#xe900;</a>
+					 	</li>	 	
+					 	<li class="b-link-menu__item">
+					 		<a class="b-link icon-caret-right" href="#" data-index="0" title="Понедельник">Пн</a>
+					 	</li>	
+					 	<li class="b-link-menu__item">
+					 		<a class="b-link icon-caret-right" href="#" data-index="1" title="Вторник">Вт</a>
+					 	</li>	
+					 	<li class="b-link-menu__item">
+					 		<a class="b-link icon-caret-right" href="#" data-index="2" title="Среда">Ср</a>
+					 	</li>	
+					 	<li class="b-link-menu__item">
+					 		<a class="b-link icon-caret-right" href="#" data-index="3" title="Четверг">Чт</a>
+					 	</li>	
+					 	<li class="b-link-menu__item">
+					 		<a class="b-link icon-caret-right" href="#" data-index="4" title="Пятница">Пт</a>
+					 	</li>	
+					 	<li class="b-link-menu__item">
+					 		<a class="b-link b-link_attention icon-caret-right" href="#" data-index="5" title="Суббота">Сб</a>
+					 	</li>	
+					 	<li class="b-link-menu__item">
+					 		<a class="b-link b-link_attention icon-caret-right" href="#" data-index="6" title="Воскресенье">Вс</a>
+					 	</li>	
+					</ul>	
+				</div>
+			</div>
+			<div class="b-page__nav b-page__nav_curent-false">
+				<div class="b-page__switch-nav">&#xf103;</div>
+		 		<div class="b-channel-menu">
+					<ul class="b-link-menu">		 						 	
+					</ul>	
+				</div>
+			</div>
+		</nav>
+	    <div class="b-page__sub-navigation">
+	    	<div class="b-filter-menu">
+		    	<ul class="b-link-menu">
+		    		<li class="b-link-menu__item b-link-menu__item_selection-multi">
+				 		<a class="b-link b-link_shape-ellipse b-link_icon b-link_right fa icon-asterisk" title="Фильмы" data-category="Художественный фильм" href="#">&#xf008;</a>
+				 	</li>	
+				 	<li class="b-link-menu__item b-link-menu__item_selection-multi">
+				 		<a class="b-link b-link_shape-ellipse b-link_icon b-link_right fa icon-asterisk" data-category="Сериал" title="Сериал" href="#">&#xf009;</a>
+				 	</li>	
+				 	<li class="b-link-menu__item b-link-menu__item_selection-multi">
+				 		<a class="b-link b-link_shape-ellipse b-link_icon b-link_right fa icon-asterisk" data-category="Развлекательные" title="Развлекательное" href="#">&#xf2a7;</a>
+				 	</li>
+				 	<li class="b-link-menu__item b-link-menu__item_selection-multi">
+				 		<a class="b-link b-link_shape-ellipse b-link_icon b-link_right fa icon-asterisk" title="Информационные" data-category="Информационные" href="#">&#xf1ea;</a>
+				 	</li>	
+				 	<li class="b-link-menu__item b-link-menu__item_selection-multi">
+				 		<a class="b-link b-link_shape-ellipse b-link_icon b-link_right fa icon-asterisk" title="Познавательные" data-category="Познавательные" href="#">&#xf19d;</a>
+				 	</li>
+				 	<li class="b-link-menu__item b-link-menu__item_selection-multi">
+				 		<a class="b-link b-link_shape-ellipse b-link_icon b-link_right fa icon-asterisk" title="Детям" data-category="Детям" href="#">&#xf1ae;</a>
+				 	</li>
+				 	<li class="b-link-menu__item b-link-menu__item_selection-multi">
+				 		<a class="b-link b-link_shape-ellipse b-link_icon b-link_right fa icon-asterisk" title="Спорт" data-category="Спорт" href="#">&#xf1e3;</a>
+				 	</li>					 
+				</ul>	
+			</div>
+	    </div>	
+		<div class="b-page__content">
+			<div class="b-channels">															
+			</div>
+		</div>
+	</div>	
+	<footer class="b-page__footer">		
+	</footer>	
+	<div class="b-page__popup">
+		<div class="b-program-detail">
+			<img class="b-program-detail__icon"/>
+			<div class="b-program-detail__content">	
+				<h4 class="b-program-detail__title"></h4>
+				<h5 class="b-program-detail__category"></h5>
+				<h5 class="b-program-detail__age"></h5>				
+				<p class="b-program-detail__description"></p>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script id="slideTemplate" type="text/template">
+	<li class="b-slider__slide">
+		<div class="b-program-now">
+			<img class="b-program-now__icon" src={{iconSrc}} alt="{{altSrc}}">
+			<h3 class="b-program-now__title"> {{title}} </h3>
+			<p class="b-program-now__time"> <span> {{time}} </span>, {{channel}} </p>
+			<a class="b-program-now__link" href="#">Подробнее</a>
+			<div class="b-program-now__timeline" style="width: {{timeline}}%;"></div>
+		</div>
+	</li>	
+</script>
+
+<script id="channelTemplate" type="text/template">
+	<div class="b-channels__channel b-channel">				
+		<div class="b-channel__header">
+			<img class="b-channel__icon" src="{{channelIcon}}">
+			<h2 class="b-channel__title"> {{channelTitle}} </h2>
+		</div>
+		<ul class="b-channel__programs">													
+		</ul>						
+	</div>
+</script>
+
+<script id="dayTemplate" type="text/template">
+	<div class="b-channels__channel b-channel">				
+		<div class="b-channel__header">
+			<div class="b-channel__icon b-link b-link_ok b-link_size-small"> {{dayShort}} </div>
+			<h2 class="b-channel__title"> {{dayLong}} </h2>
+		</div>
+		<ul class="b-channel__programs">													
+		</ul>						
+	</div>
+</script>
+
+<script id="programTemplate" type="text/template">
+	<li class="b-channel-programs__program b-program-info">
+		<div class="b-program-info__link" data-program-id="{{programId}}">						
+			<span class="b-program-info__time"> {{programTime}} </span>
+			<span class="b-program-info__title"> {{programTitle}} </span>	
+		</div>														
+	</li>	
+</script>
+
+<script id="channelLinkTemplate" type="text/template">
+	<li class="b-link-menu__item">
+		<a class="b-link icon-caret-right" href="#" data-index="{{index}}" title="{{title}}">
+			<img class="b-link-menu__img" src="{{iconSrc}}"/>
+		</a>
+	</li>	
+</script>
+
+</html>
+
+
+
